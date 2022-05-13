@@ -4,17 +4,18 @@ const errorMiddlewire = require('./middlewires/error/error');
 const cookieParser = require('cookie-parser');
 app.use(express.json());
 app.use(cookieParser());
-// app.use(express.urlencoded({ extended: true }));
-//Routes Import
+
+//Import Routes
 const product = require('./routes/productRoute');
 const user = require('./routes/userRoute');
-//Product Routes
-app.use('/api/v1', product);
+const order = require('./routes/orderRoute');
 
-//Product Routes
-app.use('/api/v1', user);
+//Route
+app.use('/api/v1', product);//Product
+app.use('/api/v1', user);//Product
+app.use('/api/v1', order);//Order
 
-//Middlewire for error
-app.use(errorMiddlewire);
+//Middlewire
+app.use(errorMiddlewire);//for error
 
 module.exports = app;

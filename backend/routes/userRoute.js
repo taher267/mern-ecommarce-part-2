@@ -11,8 +11,8 @@ router.post('/register', registerUser)
     .put('/me/update', isAuthinticatedUser, updateProfile)
     .put('/password/update', isAuthinticatedUser, updatePassword)
     //admin
-    .get('/admin/users', isAuthinticatedUser, authintizeRoles, getAllUsers)
-    .put('/admin/user/:id', isAuthinticatedUser, authintizeRoles, updateUserRole)
-    .delete('/admin/user/:id', isAuthinticatedUser, authintizeRoles, deleteUser)
-    .get('/admin/user/:id', isAuthinticatedUser, authintizeRoles, getSingleUser)
+    .get('/admin/users', isAuthinticatedUser, authintizeRoles('sadmin', 'admin'), getAllUsers)
+    .put('/admin/user/:id', isAuthinticatedUser, authintizeRoles('sadmin', 'admin'), updateUserRole)
+    .delete('/admin/user/:id', isAuthinticatedUser, authintizeRoles('sadmin', 'admin'), deleteUser)
+    .get('/admin/user/:id', isAuthinticatedUser, authintizeRoles('sadmin', 'admin'), getSingleUser)
 module.exports = router

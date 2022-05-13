@@ -17,8 +17,9 @@ module.exports = model("Product", Schema({
         maxLength: [8, "Price con't more than 8 digits!"],
         trim: true
     },
-    rating: {
+    ratings: {
         type: Number,
+        maxLength: [5, "Review rating max 5!"],
         default: 0
     },
     images: [
@@ -44,12 +45,13 @@ module.exports = model("Product", Schema({
         maxLength: [4, "Stock con't more than 4 chars!"],
         default: 1
     },
-    numberOfReviews: {
+    numOfReviews: {
         type: Number,
         default: 0
     },
     reviews: [
         {
+            user: { type: Types.ObjectId, ref: "User", required: true },
             name: { type: String, required: true, trim: true },
             rating: { type: Number, required: true },
             comment: { type: String, required: true }
