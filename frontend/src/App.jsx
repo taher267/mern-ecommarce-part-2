@@ -4,8 +4,10 @@ import Header from './component/layout/Header/Header';
 import Footer from './component/layout/Footer/Footer';
 import { useEffect } from 'react';
 import Webfont from 'webfontloader';
-import Home from './component/Home/Home';
-
+import Home from './component/layout/Home/Home';
+import ProductDetails from './component/Product/ProductDetails';
+import Products from './component/Product/Products';
+import Search from './component/Product/Search.jsx';
 function App() {
   useEffect(() => {
     Webfont.load({
@@ -15,7 +17,11 @@ function App() {
   return <Router>
     <Header />
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route index path="/" element={<Home />} />
+      <Route path="products/:keyword" element={<Products />} />
+      <Route path="products" element={<Products />} />
+      <Route path="product/:id" element={<ProductDetails />} />
+      <Route path="search" element={<Search />} />
     </Routes>
     <Footer />
   </Router>;

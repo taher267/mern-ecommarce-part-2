@@ -10,10 +10,8 @@ const product = require('./routes/productRoute');
 const user = require('./routes/userRoute');
 const order = require('./routes/orderRoute');
 
-//Route
-app.use('/api/v1', product);//Product
-app.use('/api/v1', user);//Product
-app.use('/api/v1', order);//Order
+//All Routes
+require('./routes')(app);
 
 //Middlewire
 app.use(errorMiddlewire);//for error

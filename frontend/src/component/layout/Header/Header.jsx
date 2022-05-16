@@ -1,11 +1,19 @@
 import React from 'react';
 import { ReactNavbar } from "overlay-navbar";
 import logo from "../../../images/logo.png";
+import { FaUserAlt, FaSearch, FaShoppingCart } from 'react-icons/fa';
 
 const options = {
     burgerColorHover: "#eb4034",
     logo,
     logoWidth: "20vmax",
+    cartIcon: true,
+    searchIcon: true,
+    SearchIconElement: FaSearch,
+    CartIconElement: FaShoppingCart,
+
+    profileIcon: true,
+    ProfileIconElement: FaUserAlt,
     navColor1: "white",
     logoHoverSize: "10px",
     logoHoverColor: "#eb4034",
@@ -26,16 +34,18 @@ const options = {
     link1ColorHover: "#eb4034",
     link1Margin: "1vmax",
     profileIconUrl: "/login",
+    searchIconUrl: "/search",
     profileIconColor: "rgba(35, 35, 35,0.8)",
-    searchIcon: false,
-    SearchIconElement: "Search....",
     searchIconColor: "rgba(35, 35, 35,0.8)",
     cartIconColor: "rgba(35, 35, 35,0.8)",
     profileIconColorHover: "#eb4034",
     searchIconColorHover: "#eb4034",
     cartIconColorHover: "#eb4034",
     cartIconMargin: "1vmax",
+
+
 };
-const Header = () => <ReactNavbar {...options} />
+const Header = () => <ReactNavbar
+    {...options} />
 
 export default Header

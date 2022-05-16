@@ -26,7 +26,7 @@ module.exports = class ApiFeatures {
         this.query = this.query.find(JSON.parse(queryStr));
         return this;
     }
-    pagintion(perPage, counted) {
+    pagintion(perPage) {
         const currentPage = Number(this.queryStr.page) || 1;
         const skip = perPage * (currentPage - 1);
         this.query = this.query.limit(perPage).skip(skip);

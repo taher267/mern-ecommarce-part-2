@@ -16,7 +16,7 @@ const router = require('express').Router();
 router
     //public
     .get("/products", getAllProducts)
-    .get("/product/:id", isAuthinticatedUser, getProductDetails)
+    .get("/product/:id", getProductDetails)
     .get('/reviews/:id', getProductReviews)
     .put('/review', isAuthinticatedUser, createProductReview)
     .delete('/reviews/:id', isAuthinticatedUser, getProductReviews)
